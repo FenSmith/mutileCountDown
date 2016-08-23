@@ -179,10 +179,13 @@
         UITableViewCell *cell = (UITableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         
         if ( cell ) {
-            UILabel *label = (UILabel*)[cell viewWithTag:1000];
-            label.text = [self getLeftTime:time];
             
-            [self.arrayData replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%d", time]];
+            UILabel *label = (UILabel*)[cell viewWithTag:1000];
+            if ( label) {
+                label.text = [self getLeftTime:time];
+                [self.arrayData replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%d", time]];
+            }
+
         }
     }
 }
