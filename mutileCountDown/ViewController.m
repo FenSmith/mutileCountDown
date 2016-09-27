@@ -178,12 +178,13 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         UITableViewCell *cell = (UITableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         
+        [self.arrayData replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%d", time]];
+        
         if ( cell ) {
             
             UILabel *label = (UILabel*)[cell viewWithTag:1000];
             if ( label) {
                 label.text = [self getLeftTime:time];
-                [self.arrayData replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%d", time]];
             }
 
         }
